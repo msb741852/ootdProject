@@ -85,8 +85,7 @@
   - PAST : 클릭 시 과거 착장 페이지로 이동
 
 #### 메인 페이지
-<img width="482" alt="image" src="https://github.com/msb741852/ootdProject/assets/75235831/b4c6ad15-5cf6-4d87-84bb-496a09865c8c">
-<img width="482" alt="image" src="https://github.com/msb741852/ootdProject/assets/75235831/6965383e-130d-492c-9183-f945bfaf47ef">
+![image](https://github.com/msb741852/ootdProject/assets/75235831/c1049e5a-fb72-4145-828f-5473ac96293c)
 
 - 해당 기온에 추천할 데이터가 없을 경우(왼쪽 사진), 해당 기온에 추천할 데이터가 있을 경우(오른쪽 사진)
 - 최저 기온, 최고 기온 쿠키 값을 기준으로 최저 기온(+1, -1)값, 최고 기온(+1, -1)값 모두 만족하는 데이터를 출력한다.
