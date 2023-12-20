@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ootd.project.dao.pastMapper">
+    <!-- 오늘의 착장 추가 -->
+    <insert id="pastAdd" parameterType="past">
+        insert into past(memberIdx,
+        <if test="outerIdx != null and !outerIdx.equals('')">outerIdx,</if>
+        <if test="pastFeedback != null and !pastFeedback.equals('')">pastFeedback,</if>
+        bottomIdx, topIdx, pastLowTemp, pastHighTemp) values
+        (#{memberIdx},
+        <if test="outerIdx != null and !outerIdx.equals('')">#{outerIdx},</if>
+        <if test="pastFeedback != null and !pastFeedback.equals('')">#{pastFeedback},</if>
+        #{bottomIdx}, #{topIdx}, #{pastLowTemp}, #{pastHighTemp})
+    </insert>
+    <!-- 착장 기록 가져오기 -->
+    <select id="showPastList" parameterType="map" resultType="pastItem">
+        select past.pastIdx as pastIdx, past.pastLowTemp as pastLowTemp, past.pastHighTemp as pastHighTemp, c_top.clothName as cloth_top, c_bottom.clothName as cloth_bottom, ifnull(c_outer.clothName, 'X') as cloth_outer, past.pastFeedback as pastFeedback, past.pastDate as pastDate
+        from past
+        join cloth_top as c_top on past.topIdx = c_top.topIdx
+        join cloth_bottom as c_bottom on past.bottomIdx = c_bottom.bottomIdx
+        left join cloth_outer as c_outer on past.outerIdx = c_outer.outerIdx
+        where past.memberIdx = #{memberIdx} and past.pastDate like '%-${pastDate}-%'
+        order by past.pastIdx desc
+    </select>
+    <!-- 착장 기록 삭제 -->
+    <delete id="deletePastItem" parameterType="int">
+        delete from past where pastIdx = #{pastIdx}
+    </delete>
+    <!-- 착장 기록 수정 -->
+    <update id="updatePast" parameterType="pastUpdateItem">
+        update past set topIdx = #{topIdx}, bottomIdx = #{bottomIdx}, pastFeedback = #{pastFeedback},
+        <if test="outerIdx != null and !outerIdx.equals('')"> outerIdx = #{outerIdx}</if>
+        where pastIdx = #{pastIdx}
+    </update>
+</mapper>

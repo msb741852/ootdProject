@@ -1,0 +1,42 @@
+.ootd_form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+  margin-top: 36px;
+}
+.input_box {
+  display: flex;
+  flex-direction: column;
+}
+.input_box label {
+  margin-left: 5px;
+}
+.input_box select,
+.input_box input
+{
+  margin-top: 5px;
+  height: 47px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  font-size: 15px;
+  padding: 0px 15px;
+  appearance: none;
+}
+
+.btn_ootdAdd {
+  margin-top: 9px;
+  height: 47px;
+  line-height: 47px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  background-color: #888;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "bmdh";
+}
+.dsnone {
+  display: none;
+}

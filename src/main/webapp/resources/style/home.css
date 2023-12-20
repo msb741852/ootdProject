@@ -1,0 +1,29 @@
+.swiper-wrapper {
+  width: 260px;
+  height: 215px;
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 18px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.temp_section {
+  display: flex;
+  justify-content: space-between;
+}
+.clothes_info_section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.feedback_section {
+  line-height: 18px;
+  margin-top: 20px;
+  word-break: break-word;
+}

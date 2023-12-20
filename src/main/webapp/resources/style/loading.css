@@ -1,0 +1,14 @@
+.txt1, .txt2, .txt3, .txt4,.txt5, .txt6 {
+    animation: up_motion 1s linear;
+}
+@keyframes up_motion {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

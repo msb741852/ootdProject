@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ootd.project.dao.clothesMapper">
+    <!-- 옷 추가하기 -->
+    <insert id="clothesAdd" parameterType="clothes">
+        insert into ${clothType}(memberIdx, clothName) values(#{memberIdx}, #{clothName})
+    </insert>
+    <!-- 이미 존재하는 별칭인지 확인 -->
+    <select id="validClothes" parameterType="clothes" resultType="int">
+        select count(clothName) from ${clothType} where memberIdx = #{memberIdx} and clothName = #{clothName}
+    </select>
+    <!-- 옷 리스트 가져오기 -->
+    <select id="showClothesList" parameterType="clothes" resultType="clothes">
+        select
+        <choose>
+            <when test="clothType.equals('cloth_top')">
+                topIdx as idx,
+            </when>
+            <when test="clothType.equals('cloth_bottom')">
+                bottomIdx as idx,
+            </when>
+            <otherwise>
+                outerIdx as idx,
+            </otherwise>
+        </choose>
+        clothName from ${clothType} where memberIdx = #{memberIdx}
+        order by clothName
+    </select>
+    <!-- 옷 별칭 수정 -->
+    <update id="editClothes" parameterType="clothes">
+        update ${clothType} set clothName = #{clothName} where
+        <choose>
+            <when test="clothType.equals('cloth_top')">
+                topIdx =
+            </when>
+            <when test="clothType.equals('cloth_bottom')">
+                bottomIdx =
+            </when>
+            <otherwise>
+                outerIdx =
+            </otherwise>
+        </choose>
+        #{idx}
+    </update>
+    <!-- 옷 삭제 -->
+    <delete id="deleteClothes" parameterType="clothDel">
+        delete from
+        <choose>
+            <when test="clothType.equals('cloth_top')">
+                cloth_top where topIdx =
+            </when>
+            <when test="clothType.equals('cloth_bottom')">
+                cloth_bottom where bottomIdx =
+            </when>
+            <otherwise>
+                cloth_outer where outerIdx =
+            </otherwise>
+        </choose>
+         #{idx}
+    </delete>
+</mapper>

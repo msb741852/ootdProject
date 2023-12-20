@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="member" type="com.ootd.project.domain.member.Member" />
+        <typeAlias alias="loginInfo" type="com.ootd.project.domain.member.LoginInfo" />
+        <typeAlias alias="cookieInfo" type="com.ootd.project.domain.member.CookieInfo" />
+        <typeAlias alias="clothes" type="com.ootd.project.domain.clothes.Clothes" />
+        <typeAlias alias="clothDel" type="com.ootd.project.domain.clothes.ClothDel" />
+        <typeAlias alias="past" type="com.ootd.project.domain.past.Past" />
+        <typeAlias alias="pastItem" type="com.ootd.project.domain.past.PastItem" />
+        <typeAlias alias="pastUpdateItem" type="com.ootd.project.domain.past.PastUpdateItem" />
+        <typeAlias alias="homeRequest" type="com.ootd.project.domain.HomeRequest" />
+    </typeAliases>
+</configuration>

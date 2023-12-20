@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ootd.project.dao.homeMapper">
+    <select id="recommendOotd" parameterType="homeRequest" resultType="pastItem">
+        select pastIdx, pastLowTemp, pastHighTemp, c_top.clothName as cloth_top, c_bottom.clothName as cloth_bottom, ifnull(c_outer.clothName, 'X') as cloth_outer, pastFeedback
+        from past
+        join cloth_top c_top on past.topIdx = c_top.topIdx
+        join cloth_bottom c_bottom on past.bottomIdx = c_bottom.bottomIdx
+        left join cloth_outer c_outer on past.outerIdx = c_outer.outerIdx
+        where past.memberIdx = #{memberIdx} and ((${pastLowTemp - 1} &lt; pastLowTemp and pastLowTemp &lt; ${pastLowTemp + 1}) and (${pastHighTemp - 1} &lt; pastHighTemp and pastHighTemp &lt; ${pastHighTemp + 1}))
+    </select>
+</mapper>

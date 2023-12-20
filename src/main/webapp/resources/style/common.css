@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "bmdh";
+  src: url("../font/BMDOHYEON.ttf");
+}
+body {
+  font-family: "bmdh";
+}
+input,
+input::placeholder,
+select{
+  font-size: 12px;
+  font-family: "bmdh";
+}
+input[type="password"] {
+  font-family: 'Arial';
+}
+#wrap {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#wrap .container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.btn_style1 {
+  background-color: #888;
+  color: #fff;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 15px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #888;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.header .logo_box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header .logout_box {
+  color: #ccc;
+  cursor: pointer;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.today_temp_info_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 260px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #888;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin: 0 auto 16px;
+}
+
+.nav_box {
+  height: 90px;
+  border-top: 1px solid #ccc;
+}
+.nav_list {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav_item {
+  color: #ccc;
+}
+.nav_item.nav_active {
+  color: #000;
+}
+#wrap .header + .container {
+  width: 100%;
+  height: calc(100vh - 76px - 142px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section_title {
+  font-size: 25px;
+  margin-bottom: 27px;
+}
+.container_content {
+  width: 80%;
+}
+.btn_back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}

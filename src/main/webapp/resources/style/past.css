@@ -1,0 +1,59 @@
+.section_title {
+  display: flex;
+  justify-content: space-between;
+}
+.section_title select {
+  border: 1px solid #999;
+  border-radius: 10px;
+  color: #666;
+}
+.past_ootd_box {
+  max-height: 438px;
+  overflow-y: auto;
+}
+.past_ootd_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.past_ootd_item {
+  min-height: 214px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.temp_box {
+  display: flex;
+  justify-content: space-between;
+}
+.ootd_info_box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feedback_info {
+  line-height: 18px;
+  margin-top: 20px;
+  word-break: break-word;
+}
+.dateAndBtn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.btn_box {
+  font-size: 22px;
+  display: flex;
+  gap: 17px;
+}
+.btn_box i {
+  cursor: pointer;
+  color: #555;
+}
+.introduce_text {
+  padding: 10px 0;
+}

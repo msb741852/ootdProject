@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 87px;
+}
+.box_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 21px;
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.login_form > input {
+  width: 290px;
+  height: 35px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.logo_box {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.btn_box {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+.msg_fail {
+  font-size: 12px;
+  color: #f04b4b;
+}
