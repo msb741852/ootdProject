@@ -26,8 +26,8 @@
             </c:if>
           </div>
           <form action="/login" method="post" class="login_form">
-            <input type="text" placeholder="ID" name="memberId" class="input_id" required/>
-            <input type="password" placeholder="PW" name="memberPw" class="input_pw" required/>
+            <input type="text" placeholder="ID" name="memberId" class="input_id" value="admin" required/>
+            <input type="password" placeholder="PW" name="memberPw" class="input_pw" value="123123" required/>
             <div class="btn_box">
               <button
                 type="button"
