@@ -2,7 +2,7 @@ let month = "";
 
 let toHtml = (rs) => {
     let html_txt = "";
-    let dt = new Date();
+
 
     rs.forEach(content => {
         html_txt +=`<li class="past_ootd_item" data-idx="${content.pastIdx}">
@@ -17,7 +17,7 @@ let toHtml = (rs) => {
                   <div class="feedback_info">피드백: <span class="feedback_text">${content.pastFeedback}</span></div>
                 </div>
                 <div class="dateAndBtn_box">
-                    <span class="date_box">${new Date(content.pastDate).getFullYear() + "-" + (new Date(content.pastDate).getMonth() + 1) + "-" + new Date(content.pastDate).getDate()}</span>
+                    <span class="date_box">${new Date(content.pastDate).getFullYear() + "-" + ((new Date(content.pastDate).getMonth() + 1) < 10 ? "0"+(new Date(content.pastDate).getMonth() + 1) : (new Date(content.pastDate).getMonth() + 1)) + "-" + (new Date(content.pastDate).getDate() < 10 ? "0" + new Date(content.pastDate).getDate() : new Date(content.pastDate).getDate())}</span>
                     <div class="btn_box">
                       <i class="fa-solid fa-pen-to-square btn_edit"></i>
                       <i class="fa-solid fa-trash btn_delete"></i>

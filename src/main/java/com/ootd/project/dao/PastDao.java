@@ -21,6 +21,7 @@ public class PastDao {
         return session.insert(namespace + "pastAdd", past);
     }
     public List<PastItem> showPastList(Map<String, Integer> map) {
+        System.out.println(map.get("pastDate"));
         return session.selectList(namespace + "showPastList", map);
     }
     public int deletePastItem(int pastIdx) {

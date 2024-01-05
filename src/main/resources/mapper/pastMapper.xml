@@ -21,7 +21,15 @@
         join cloth_top as c_top on past.topIdx = c_top.topIdx
         join cloth_bottom as c_bottom on past.bottomIdx = c_bottom.bottomIdx
         left join cloth_outer as c_outer on past.outerIdx = c_outer.outerIdx
-        where past.memberIdx = #{memberIdx} and past.pastDate like '%-${pastDate}-%'
+        where past.memberIdx = #{memberIdx} and past.pastDate like
+        <choose>
+            <when test="pastDate lt 10">
+                '%-0${pastDate}-%'
+            </when>
+            <otherwise>
+                '%-${pastDate}-%'
+            </otherwise>
+        </choose>
         order by past.pastIdx desc
     </select>
     <!-- 착장 기록 삭제 -->
