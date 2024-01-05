@@ -131,3 +131,5 @@
 - 과거 착장 오류 수정
   - 문제 : 한 자리 달들은 출력이 되지 않는 오류였다.
   - 해결 : mapper 에서 넘어오는 달이 10 보다 작을 경우 0을 붙여서 검색할 수 있도록 변경 
+
+<img width="612" alt="image" src="https://github.com/msb741852/ootdProject/assets/75235831/64b38f37-2afa-4917-8571-5521c9038f14">
