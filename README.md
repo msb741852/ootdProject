@@ -133,3 +133,9 @@
   - 해결 : mapper 에서 넘어오는 달이 10 보다 작을 경우 0을 붙여서 검색할 수 있도록 변경 
 
 <img width="612" alt="image" src="https://github.com/msb741852/ootdProject/assets/75235831/64b38f37-2afa-4917-8571-5521c9038f14">
+ 
+
+### 알게 된 점
+- mapper 내에서 꺽쇠 (<)를 사용하지 못하니 &lt 를 사용했는데 <= 를 대신 할 &lte는 되지 않는 것이다. %lt; 까지 작성하고 뒤에 =를 추가해주면 <= 와 같이 사용할 수 있다는 점을 알게 되었습니다.
+
+<img width="1215" alt="image" src="https://github.com/msb741852/ootdProject/assets/75235831/4a3dedee-1761-4417-8181-9fcd0db604a9">

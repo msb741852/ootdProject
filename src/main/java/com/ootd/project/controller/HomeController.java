@@ -29,7 +29,8 @@ public class HomeController {
 
     @ResponseBody
     @PostMapping("/home/read/recommend")
-    public List<PastItem> commendListView(@CookieValue int pmeTwoLevas,  @CookieValue int pmeThgiHevas, HttpSession session) {
+    public List<PastItem> commendListView(@CookieValue int pmeTwoLevas,  @CookieValue int pmeThgiHevas,
+                                          HttpSession session) {
         HomeRequest homeRequest = new HomeRequest();
         homeRequest.setMemberIdx(Integer.parseInt(session.getAttribute("omotemdberiddx").toString()));
         homeRequest.setPastLowTemp(pmeTwoLevas);
