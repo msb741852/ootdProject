@@ -23,10 +23,6 @@ public class PastController {
     @GetMapping("/past")
     public String pastView(HttpSession session) {
         if(session.getAttribute("omotemdberiddx") != null) {
-//            Map<String, List<Clothes>> map = todayService.clothesListView(Integer.parseInt(session.getAttribute("omotemdberiddx").toString()));
-//            model.addAttribute("cloth_top", map.get("cloth_top"));
-//            model.addAttribute("cloth_bottom", map.get("cloth_bottom"));
-//            model.addAttribute("cloth_outer", map.get("cloth_outer"));
             return "past";
         }
         return "redirect:/";

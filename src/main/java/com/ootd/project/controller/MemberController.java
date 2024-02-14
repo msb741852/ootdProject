@@ -31,7 +31,7 @@ public class MemberController {
 
     @PostMapping("/register/add")
     public String registerAdd(Member member, Model model) {
-        if(memberService.registerMember(member) == "회원가입 완료") {
+        if(memberService.registerMember(member).equals("회원가입 완료")) {
             return "login";
         } else {
             model.addAttribute("fail_msg", "이미 존재하는 아이디입니다.");

@@ -29,7 +29,7 @@ public class ClothesController {
 
     @ResponseBody
     @PostMapping(value = "/clothes/add", produces = "application/text; charset=utf8")
-    public String clothesTopAdd(Clothes clothes, HttpSession session) {
+    public String clothesAdd(Clothes clothes, HttpSession session) {
         clothes.setMemberIdx(Integer.parseInt(session.getAttribute("omotemdberiddx").toString()));
         return clothesService.memberClothesAdd(clothes);
     }
